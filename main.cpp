@@ -2,7 +2,7 @@
 #include <vector>
 #include <fstream>
 #include <string>
-#include <sstring>
+#include <sstream>
 
 #include "StructDefinitions.h"
 #include "DBSCAN.h"
