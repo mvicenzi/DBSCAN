@@ -2,6 +2,7 @@
 #include <vector>
 #include <fstream>
 #include <string>
+#include <sstring>
 
 #include "StructDefinitions.h"
 #include "DBSCAN.h"
@@ -27,8 +28,10 @@ void GetInputFromFile(std::string filename, std::vector<Point> &input_database){
   while( std::getline(ifile,line)){
     Point buffer;
     //set point coordinates
-    while (std::getline(line, number, " ")){
-        buffer.x.push_back(stod(number));
+    std::istringstream sline(line);
+    std::string number;
+    while (std::getline(sline, number, ' ')){
+        buffer.x.push_back(std::stod(number));
     }
     //set point unique ID
     buffer.id = point_ID;
@@ -43,7 +46,7 @@ void GetInputFromFile(std::string filename, std::vector<Point> &input_database){
 }
 
 
-int main(int argc, char *argv){
+int main(int argc, char **argv){
 
     if(argc != 2){
       std::cout << "No input file selected!" << std::endl;
