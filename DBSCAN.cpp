@@ -26,7 +26,7 @@ DBSCAN::~DBSCAN(){
 
 ///This function implements DBSCAN, based on the pseudocode from
 ///this paper: ACM Trans. Database Syst. 42 (3): 19:1–19:21. doi:10.1145/3068335
-void DBSCAN::Compute(std::vector<Point> input_database){
+void DBSCAN::Compute(std::vector<Point> &input_database){
 
   int cluster_counter = 0;
 
