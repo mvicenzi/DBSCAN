@@ -14,7 +14,7 @@ class DBSCAN{
 
 public:
 
-  enum DistanceOption{ kEuclid, kManhattan, kChebyshev }
+  enum DistanceOption{ kEuclid, kManhattan, kChebyshev };
 
   ///Constructor
   DBSCAN(int MinPts, double Epsilon,  DistanceOption DistOpt);
@@ -26,7 +26,7 @@ public:
 private:
 
   ///Scan database for neighbors of a given point
-  std::vector<Point> RangeScan(std::vector<Point> db, Point p)
+  std::vector<Point> RangeScan(std::vector<Point> db, Point p);
   ///Compute the distance between two points
   double ComputeDistance(Point p1, Point p2);
 
