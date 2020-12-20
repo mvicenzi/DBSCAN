@@ -8,7 +8,7 @@
 #include "DBSCAN.h"
 
 ///////////////////////////////////
-/// This function reads the input databse of points
+/// This function reads the input database of points
 /// It assumes the input is stored in a file
 
 void GetInputFromFile(std::string filename, std::vector<Point> &input_database){
@@ -56,14 +56,18 @@ int main(int argc, char **argv){
     std::string filename(argv[1]);
     std::vector<Point> input_database;
 
-    //TODO: check this function!!!
     GetInputFromFile(filename, input_database);
+    if(input_database.size() == 0)  return 1;
 
-    //TODO: apply DBSCAN to input_databse
+    //TODO: read/get this parameters from outside
+    int MinPts = 12;
+    double Epsilon = 6;
+    DistanceOption DistOpt = DistanceOption::kEuclid;
 
-    //TODO: check/extract DBSCAN results
+    DBSCAN ClusterMaker(MinPts, Epsilon, DistOpt);
+    ClusterMaker.Compute(input_database);  //WARNING: not yet tested!!!! FIXME
 
-
+    //TODO: test/check/extract/plot DBSCAN results
 
   return 0;
 }
