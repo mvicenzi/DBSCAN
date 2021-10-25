@@ -28,4 +28,7 @@ struct Cluster{
     int id; ///< unique identifier
 };
 
+/// Possible distance-metric definitions
+enum DistanceOption{ kEuclid, kManhattan, kChebyshev };
+
 #endif

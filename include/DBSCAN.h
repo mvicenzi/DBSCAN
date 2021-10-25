@@ -14,8 +14,6 @@ class DBSCAN{
 
 public:
 
-  enum DistanceOption{ kEuclid, kManhattan, kChebyshev };
-
   ///Constructor
   DBSCAN(int MinPts, double Epsilon,  DistanceOption DistOpt);
   ///Destructor
