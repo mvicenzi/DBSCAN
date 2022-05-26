@@ -1,9 +1,14 @@
 # DBSCAN
 Simple C++ implementation of DBSCAN for n-th dimensional points.
 
-NB: This is still a work in progress and needs testing!!
+## How to build 
+Standard `cmake` + `make` build. No major dependencies.
 
-## To-do list
-* check DBSCAN cluster output on test set 
-** create test set (and folder!)
-* find a way to output/display the clusters
+What you should typically want to do:
+* Create a build subdirectory `mkdir build` and `cd` to it;
+* Run `cmake -B . -S ../.`;
+* Run `make`.
+
+## How to run
+...
+

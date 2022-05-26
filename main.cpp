@@ -140,8 +140,8 @@ int main(int argc, char **argv){
     GetInputFromFile(filename, input_database);
     if(input_database.size() == 0)  return 1;
     
-    DBSCAN ClusterMaker(MinPts, Epsilon, DistOpt);
-    ClusterMaker.Compute(input_database);  //WARNING: not yet tested!!!! FIXME
+    DBSCAN ClusterMaker(input_database);
+    ClusterMaker.Compute(MinPts, Epsilon, DistOpt); //WARNING: not yet tested!!!! FIXME
 
     //TODO: check/extract/plot DBSCAN results
 

@@ -4,6 +4,7 @@
 #include "StructDefinitions.h"
 #include <vector>
 #include <string>
+#include <map>
 
 /// \class DBSCAN
 /// \brief Class implementing the DBSCAN algorithm
@@ -15,23 +16,35 @@ class DBSCAN{
 public:
 
   ///Constructor
-  DBSCAN(int MinPts, double Epsilon,  DistanceOption DistOpt);
+  DBSCAN(std::vector<Point> db);
   ///Destructor
   ~DBSCAN();
+  
   ///Run DBSCAN on input database
-  void Compute(std::vector<Point> &input_database);
+  void Compute(int minpts, double eps,  DistanceOption dist);
 
-private:
-
-  ///Scan database for neighbors of a given point
+  ///Scan for neighbors of a given point
   std::vector<Point> RangeScan(std::vector<Point> db, Point p);
   ///Compute the distance between two points
   double ComputeDistance(Point p1, Point p2);
 
-  int _MinPts; ///< density threshold
-  double _Epsilon; ///< radius
-  DistanceOption _DistOpt; ///< distance option
-  std::vector<Cluster> m_Clusters; ///< output clusters
+  ///Assign points to clusters
+  void AssignClusters();
+
+  ///Return outputs
+  int GetNClusters();
+  std::map<int, Cluster> GetClusters();
+  Cluster GetCluster(int index);
+  void PrintClusters();
+
+private:
+
+  int m_minpts; ///< density threshold
+  double m_eps; ///< radius
+  DistanceOption m_dist; ///< distance option
+  
+  std::vector<Point> m_db; ///< input database
+  std::map<int,Cluster> m_clusters; ///< output clusters
 
 };
 #endif
