@@ -141,9 +141,10 @@ int main(int argc, char **argv){
     if(input_database.size() == 0)  return 1;
     
     DBSCAN ClusterMaker(input_database);
-    ClusterMaker.Compute(MinPts, Epsilon, DistOpt); //WARNING: not yet tested!!!! FIXME
-
-    //TODO: check/extract/plot DBSCAN results
+    ClusterMaker.Compute(MinPts, Epsilon, DistOpt);
+	
+    //print output
+    ClusterMaker.PrintClusters();
 
   return 0;
 }
