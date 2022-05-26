@@ -12,3 +12,12 @@ What you should typically want to do:
 ## How to run
 ...
 
+### Input
+The input file should contain the n-dimensional points as
+```pnt1_x1 pnt1_x2 .... pnt1_xn
+   pnt2_x1 pnt2_x2 .... pnt2_xn
+   ...
+```
+
+### Output
+
